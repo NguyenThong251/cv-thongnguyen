@@ -151,7 +151,9 @@ const Course = () => {
           {courses.map((course, index) => (
             <div
               key={course.id}
-              ref={(el) => (cardsRef.current[index] = el)}
+              ref={(el) => {
+                if (el) cardsRef.current[index] = el;
+              }}
               className="course-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl"
             >
               <div className="relative h-64 w-full overflow-hidden ">
