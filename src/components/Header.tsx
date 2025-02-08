@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Logo from "./Logo";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import gsap from "gsap";
 
 const Header = () => {
@@ -8,15 +11,15 @@ const Header = () => {
   const menuRef = useRef<HTMLDivElement>(null);
   const menuItemsRef = useRef<HTMLDivElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname(); // Lấy đường dẫn hiện tại
 
   const handleNavClick = () => {
     setIsMenuOpen(false);
   };
 
   useEffect(() => {
-    // Hover animation for nav links
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     navLinks.forEach(link => {
       link.addEventListener('mouseenter', (e) => {
         gsap.to(e.currentTarget, {
@@ -43,7 +46,6 @@ const Header = () => {
   useEffect(() => {
     if (menuRef.current && menuItemsRef.current) {
       if (isMenuOpen) {
-        // Open menu animation
         gsap.to(menuRef.current, {
           height: 'auto',
           duration: 0.5,
@@ -57,7 +59,6 @@ const Header = () => {
           ease: 'power2.out'
         });
       } else {
-        // Close menu animation
         gsap.to(menuRef.current, {
           height: 0,
           duration: 0.5,
@@ -80,14 +81,15 @@ const Header = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 animate-fade-in">
+        {pathname !== "/courses" && ( <div className="hidden md:flex space-x-8 animate-fade-in">
           <Link href="#about" className="nav-link text-lg font-medium text-secondary">About</Link>
           <Link href="#projects" className="nav-link text-lg font-medium text-secondary">Projects</Link>
           <Link href="#skills" className="nav-link text-lg font-medium text-secondary">Skills</Link>
           <Link href="#contact" className="nav-link text-lg font-medium text-secondary">Contact</Link>
-          <Link href="/courses" className="nav-link text-lg font-medium text-secondary">Course</Link>
-
-        </div>
+         
+            <Link href="/courses" className="nav-link text-lg font-medium text-secondary">Course</Link>
+        
+        </div>  )}
 
         {/* Hamburger Button */}
         <button
@@ -100,6 +102,12 @@ const Header = () => {
           <span className={`w-6 h-0.5 bg-foreground transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
           <span className={`w-6 h-0.5 bg-foreground transition-transform duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
+        {pathname == "/courses" && (  <a href="https://www.facebook.com/profile.php?id=100049657233032"  className="btn-primary px-6 py-2 text-white rounded-lg relative overflow-hidden">
+        <span className="relative z-10"> 
+        Liên hệ
+          </span>
+          <div className="gradient-bg absolute inset-0 bg-[length:200%_100%] bg-gradient-to-r from-[#42d392] via-[#647eff] to-[#42d392]"></div>
+        </a>)}
       </nav>
 
       {/* Mobile Menu */}
@@ -108,7 +116,7 @@ const Header = () => {
         className="md:hidden overflow-hidden h-0"
         style={{ height: 0 }}
       >
-        <div
+       {pathname !== "/courses" && ( <div
           ref={menuItemsRef}
           className="container mx-auto px-4 py-4 flex flex-col space-y-4"
         >
@@ -116,8 +124,10 @@ const Header = () => {
           <Link href="#projects" onClick={handleNavClick} className="nav-link text-lg font-medium text-secondary">Projects</Link>
           <Link href="#skills" onClick={handleNavClick} className="nav-link text-lg font-medium text-secondary">Skills</Link>
           <Link href="#contact" onClick={handleNavClick} className="nav-link text-lg font-medium text-secondary">Contact</Link>
-          <Link href="/courses" onClick={handleNavClick} className="nav-link text-lg font-medium text-secondary">Course</Link>
-        </div>
+          
+            <Link href="/courses" onClick={handleNavClick} className="nav-link text-lg font-medium text-secondary">Course</Link>
+         
+        </div> )}
       </div>
     </header>
   );

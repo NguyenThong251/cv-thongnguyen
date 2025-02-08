@@ -1,7 +1,8 @@
+import Course from '@/src/components/Course';
+import Footer from '@/src/components/Footer';
+import Header from '@/src/components/Header';
 import { NextPage } from 'next';
-import Header from '../components/Header';
-import Course from '../components/Course';
-import Footer from '../components/Footer';
+
 
 
 const CoursesPage: NextPage = () => {
