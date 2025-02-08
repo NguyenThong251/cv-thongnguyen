@@ -92,7 +92,7 @@ const Header = () => {
         </div>  )}
 
         {/* Hamburger Button */}
-        <button
+        {pathname !== "/courses" && ( <button
           ref={hamburgerRef}
           className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -101,7 +101,7 @@ const Header = () => {
           <span className={`w-6 h-0.5 bg-foreground transition-transform duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
           <span className={`w-6 h-0.5 bg-foreground transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
           <span className={`w-6 h-0.5 bg-foreground transition-transform duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-        </button>
+        </button>)}
         {pathname == "/courses" && (  <a href="https://www.facebook.com/profile.php?id=100049657233032"  className="btn-primary px-6 py-2 text-white rounded-lg relative overflow-hidden">
         <span className="relative z-10"> 
         Liên hệ
