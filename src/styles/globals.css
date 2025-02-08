@@ -42,15 +42,19 @@
   width: 200vw;
   color: #fff;
   mix-blend-mode: difference;
-  font-size: 9vw;
+  font-size: 11vw;
 }
-
+@font-face {
+  font-family: "Moresby";
+  src: url(/fonts/Moresby.otf);
+}
 .marquee-container {
   width: 100%;
   padding-top: 0.2em;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  font-family: "Moresby";
 }
 
 .marquee-container span {
