@@ -134,7 +134,14 @@
     --secondary-foreground: #f8fafc;
   }
 }
- 
+.panel {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 @layer base {
   * {
     @apply border-border;

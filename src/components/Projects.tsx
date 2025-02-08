@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -144,7 +145,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen overflow-hidden bg-background py-20">
+    <section id="projects" ref={sectionRef} className="relative min-h-screen overflow-hidden bg-background py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#42d392] to-[#647eff]">
           Featured Projects

@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import Link from 'next/link';
@@ -168,9 +169,9 @@ const About = () => {
               </a>
               <Link 
                 href="/courses"
-                className="btn-secondary px-6 py-3 rounded-lg relative overflow-hidden border-2 border-[#42d392]"
+                className="btn-secondary px-6 py-3  rounded-lg relative overflow-hidden border-2 border-[#42d392]"
               >
-                <span className="relative z-10 gradient-text">My Courses</span>
+                <span className="relative z-10 gradient-text  ">My Courses</span>
                 <div className="gradient-bg absolute inset-0 bg-[length:200%_100%] bg-gradient-to-r from-[#42d392] via-[#647eff] to-[#42d392] opacity-0"></div>
               </Link>
             </div>

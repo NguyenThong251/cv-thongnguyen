@@ -12,7 +12,11 @@ const Header = () => {
   const menuItemsRef = useRef<HTMLDivElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname(); // Lấy đường dẫn hiện tại
-
+  // const router = useRouter();
+  // const { pathname } = router;
+  
+  // Kiểm tra nếu pathname là "/courses" hoặc "/courses/{id}"
+  const isCoursesPage = pathname.startsWith("/courses");
   const handleNavClick = () => {
     setIsMenuOpen(false);
   };
@@ -81,7 +85,7 @@ const Header = () => {
         </div>
 
         {/* Desktop Menu */}
-        {pathname !== "/courses" && ( <div className="hidden md:flex space-x-8 animate-fade-in">
+        {!isCoursesPage && ( <div className="hidden md:flex space-x-8 animate-fade-in">
           <Link href="#about" className="nav-link text-lg font-medium text-secondary">About</Link>
           <Link href="#projects" className="nav-link text-lg font-medium text-secondary">Projects</Link>
           <Link href="#skills" className="nav-link text-lg font-medium text-secondary">Skills</Link>
@@ -92,7 +96,7 @@ const Header = () => {
         </div>  )}
 
         {/* Hamburger Button */}
-        {pathname !== "/courses" && ( <button
+        { !isCoursesPage && ( <button
           ref={hamburgerRef}
           className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -102,9 +106,9 @@ const Header = () => {
           <span className={`w-6 h-0.5 bg-foreground transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
           <span className={`w-6 h-0.5 bg-foreground transition-transform duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>)}
-        {pathname == "/courses" && (  <a href="https://www.facebook.com/profile.php?id=100049657233032"  className="btn-primary px-6 py-2 text-white rounded-lg relative overflow-hidden">
+        {isCoursesPage && (  <a href="https://www.facebook.com/profile.php?id=100049657233032"  className="btn-primary px-6 py-2 text-white rounded-lg relative overflow-hidden">
         <span className="relative z-10"> 
-        Liên hệ
+        Contact us
           </span>
           <div className="gradient-bg absolute inset-0 bg-[length:200%_100%] bg-gradient-to-r from-[#42d392] via-[#647eff] to-[#42d392]"></div>
         </a>)}
@@ -116,7 +120,7 @@ const Header = () => {
         className="md:hidden overflow-hidden h-0"
         style={{ height: 0 }}
       >
-       {pathname !== "/courses" && ( <div
+       { !isCoursesPage &&  ( <div
           ref={menuItemsRef}
           className="container mx-auto px-4 py-4 flex flex-col space-y-4"
         >
