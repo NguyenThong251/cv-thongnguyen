@@ -116,7 +116,7 @@ const Header = () => {
           <Link href="#projects" onClick={handleNavClick} className="nav-link text-lg font-medium text-secondary">Projects</Link>
           <Link href="#skills" onClick={handleNavClick} className="nav-link text-lg font-medium text-secondary">Skills</Link>
           <Link href="#contact" onClick={handleNavClick} className="nav-link text-lg font-medium text-secondary">Contact</Link>
-          <Link href="" onClick={handleNavClick} className="nav-link text-lg font-medium text-secondary">Course</Link>
+          <Link href="/courses" onClick={handleNavClick} className="nav-link text-lg font-medium text-secondary">Course</Link>
         </div>
       </div>
     </header>

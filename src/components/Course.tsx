@@ -114,7 +114,7 @@ const Course = () => {
   return (
     <section ref={courseRef} className="py-24 bg-secondary/10">
       <div className="container mx-auto px-4">
-        <h2 className="course-title text-4xl md:text-5xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-[#2f4427] to-[#76d476]">
+        <h2 className="course-title text-4xl md:text-5xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-[#f1f093] to-[#76d476]">
           {/* Featured Courses */}
           Comming Soon
         </h2>
