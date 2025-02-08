@@ -60,7 +60,7 @@ const Contact = () => {
             Get in Touch
           </h2>
           <p className="contact-subtitle text-center text-foreground/70 mb-12 max-w-md mx-auto">
-            Feel free to reach out. I"d love to hear from you!
+            Feel free to reach out.  {"I'd "} love to hear from you!
           </p>
           <form className="contact-form max-w-lg mx-auto space-y-6 bg-white p-8 rounded-xl shadow-lg">
             <div>

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import Link from 'next/link';
 import { FaGithub, FaFacebook, FaLinkedin } from 'react-icons/fa';
+import Image from 'next/image';
 
 const About = () => {
   const aboutRef = useRef<HTMLElement>(null);
@@ -205,12 +206,16 @@ const About = () => {
           <div ref={imageRef} className="relative flex justify-center items-center mt-8 lg:mt-0">
             <div className="relative w-full max-w-lg mx-auto">
               <div className="banner-glow absolute -inset-4 bg-gradient-to-r from-[#42d392] to-[#647eff] opacity-20 blur-2xl rounded-full"></div>
-              <img 
+              {/* <img 
                 src="/thong-banner.svg" 
                 alt="Thong Banner" 
                 className="banner-image relative w-full h-auto drop-shadow-2xl"
                 style={{ maxHeight: '600px', objectFit: 'contain' }}
-              />
+              /> */}
+              {/* <Image src="/thong-banner.svg" alt='banner' className="banner-image relative w-full h-auto drop-shadow-2xl"/> */}
+              <div style={{ position: "relative", width: "100%", height: "600px" }}>
+  <Image src="/thong-banner.svg" alt="Thong Banner" fill style={{ objectFit: "contain" }} />
+</div>
             </div>
           </div>
         </div>

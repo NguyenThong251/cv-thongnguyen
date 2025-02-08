@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 // import Image from 'next/image';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -146,12 +147,12 @@ const Skills = () => {
                         fill
                         className="object-contain filter brightness-100 group-hover:brightness-110 transition-all duration-300"
                       /> */}
-                       <img
-                        src={skill.icon}
-                        alt={skill.name}
-                     
-                        className="object-contain filter brightness-100  group-hover:brightness-110 transition-all duration-300"
-                      />
+                       <Image
+    src={skill.icon}
+    alt={skill.name}
+    fill
+    className="object-contain filter brightness-100 group-hover:brightness-110 transition-all duration-300"
+  />
                     
                     </div>
                     <span className="text-sm text-white/70 group-hover:text-white transition-colors duration-300 text-center">

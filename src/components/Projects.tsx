@@ -96,7 +96,7 @@ const Projects = () => {
       });
 
       // Animate individual cards
-      gsap.utils.toArray('.project-card').forEach((card: any) => {
+      gsap.utils.toArray<HTMLElement>('.project-card').forEach((card) => {
         // Scale and rotation animation
         gsap.to(card, {
           scale: 1,
