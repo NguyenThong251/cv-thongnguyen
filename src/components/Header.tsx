@@ -68,7 +68,7 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border/40 z-50">
+    <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border/40 z-[999]">
       <nav className="container mx-auto flex justify-between items-center px-4 py-5">
         <div className="animate-slide-in">
           <Link 
@@ -124,4 +124,3 @@ const Header = () => {
 };
 
 export default Header;
-

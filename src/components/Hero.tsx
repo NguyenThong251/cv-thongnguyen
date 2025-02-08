@@ -7,7 +7,15 @@ const Hero = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Animation sequence
-      const tl = gsap.timeline();
+      // const tl = gsap.timeline();
+      const tl = gsap.timeline({
+        onComplete: () => {
+          const loader = document.querySelector(".loader") as HTMLElement;
+          if (loader) {
+            loader.style.display = "none"; // Ẩn loader sau khi animation xong
+          }
+        },
+      });
 
       // Reveal clips
       tl.from('.clip-top, .clip-bottom', {

@@ -75,11 +75,11 @@ const CustomCursor = () => {
     <>
       <div 
         ref={cursorRef}
-        className=" cursor-circle fixed pointer-events-none w-8 h-8 border-2 border-cyan-300  hidden sm:block rounded-full z-[999] mix-blend-difference"
+        className=" cursor-circle fixed pointer-events-none w-8 h-8 border-2 border-cyan-300  hidden sm:block rounded-full z-[999999] mix-blend-difference"
       />
       <div 
         ref={cursorDotRef}
-        className="cursor-dot fixed pointer-events-none w-1 h-1 bg-cyan-300 rounded-full z-[999]  hidden sm:block"
+        className="cursor-dot fixed pointer-events-none w-1 h-1 bg-cyan-300 rounded-full z-[9999]  hidden sm:block"
       />
     </>
   );
