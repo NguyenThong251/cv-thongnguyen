@@ -160,7 +160,7 @@ const About = () => {
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 pt-4">
               <a 
-                href="/NguyenHoangThong_CV.pdf"
+                href="/NguyenHoangThong_CV_Developer.pdf"
                 target="_blank"
                 className="btn-primary px-6 py-3 text-white rounded-lg relative overflow-hidden"
               >
